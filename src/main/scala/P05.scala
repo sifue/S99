@@ -9,7 +9,7 @@ import scala.annotation.tailrec
 object P05 extends App {
 
   def reverse[E](list: List[E]): List[E] = list match {
-    case List(x) => List(x)
+    case l @ List(x) => l
     case x :: xs => reverse(xs) ::: List(x)
     case _ => throw new IllegalArgumentException(s"${list}は不正な引数です")
   }
